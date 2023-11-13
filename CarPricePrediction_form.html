@@ -1,0 +1,60 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CarPricePrediction</title>
+        <style>
+            
+        body {
+            background-color: mediumseagreen;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            border-radius: 14px;
+            border-color: #2d4d4d;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: #a8833d;
+            font-size: medium;
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h3 {
+            margin: 10px 0;
+        }
+        input, select, button {
+            width: 100%;
+            height: 35px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #005f5f;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003333;
+        }
+    
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form action="{ url_for('predict')}" method="post">
+                <h1>CarPricePrediction</h1>
+                <h3>Year</h3><input id="input1" name="Year" type="text" required="required"><h3>Showroom Price (In lakhs)</h3><input id="input2" name="Present_Price" type="text" required="required"><h3>Kilometers Driven</h3><input id="input3" name="Kms_Driven" type="text" required="required"><h3>Number of Owners</h3><input id="input4" name="Owner" type="text" required="required"><h3>Fuel Type</h3><select name="Fuel_Type_Petrol" required="required"><option value="Petrol">Petrol</option><option value="Diesel">Diesel</option><option value="CNG">CNG</option></select><h3>Seller Type</h3><select name="Seller_Type_Individual" required="required"><option value="Dealer">Dealer</option><option value="Individual">Individual</option></select><h3>Transmission Type</h3><select name="Transmission_Mannual" required="required"><option value="Manual">Manual</option><option value="Automatic">Automatic</option></select>
+                <button type="submit">Calculate Selling Price</button>
+            </form>
+            <br><br>
+            <h3>{ prediction_text }</h3>
+        </div>
+    </body>
+    </html>
+    
